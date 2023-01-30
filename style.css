@@ -1,0 +1,325 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--Violet);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    --Violet: hsl(257, 40%, 49%);
+    --SoftMagenta: hsl(300, 69%, 71%);
+}
+
+
+main {
+    max-width: 375px;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body {
+    background-image: url(./images/bg-mobile.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: xx-large;
+    font-weight: 600;
+    margin: 2rem 0;
+}
+
+p {
+    color: white;
+    font-size: x-large;
+    margin-bottom: 2rem;
+}
+
+button {
+    width: 70%;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+    color: var(--Violet);
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--SoftMagenta);
+}
+
+
+
+.huddle {
+    width: 40%;
+    margin: 2rem 0;
+}
+
+.social {
+    color: white;
+}
+
+
+i {
+    padding: 8px;
+    margin: 2rem .5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.fa-facebook-f {
+    padding: 8px 11px;
+}
+
+i:hover {
+    cursor: pointer;
+    color: var(--SoftMagenta);
+    border-color: var(--SoftMagenta);
+}
+
+
+
+ @media (min-width: 1024px) {
+
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 1fr 100px;
+        max-width: 90%;
+        margin: 0 auto;
+        gap: 4rem;
+        text-align: left;
+    }
+
+    body {
+        background-image: url(./images/bg-desktop.svg);
+        background-position-x: right;
+    }
+
+
+
+    .huddle {
+        grid-column: 1/2;
+        align-self: center;
+    }
+
+    .left-content {
+        grid-column: 1/2;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .right-content {
+        grid-column: 2/3;
+        grid-row: 2;
+        align-self: center;
+    }
+
+    .social {
+        grid-column: 2/3;
+        grid-row: 3;
+        justify-self: end;
+        align-self: end;
+    }
+
+    button {
+        width: 40%;
+    }
+} 
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+    /* styles for tablet in portrait mode */
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        margin: 0 auto;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    body {
+        background-image: url(./images/bg-mobile.svg);
+        background-position: top center;
+    }
+
+
+
+    .huddle {
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .left-content {
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .right-content {
+
+        grid-row: 3;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .social {
+
+        grid-row: 4;
+        justify-self: center;
+        align-self: center;
+    }
+
+    button {
+        width: 40%;
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+
+    /* styles for tablet in landscape mode */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 1fr 100px;
+        max-width: 90%;
+        margin: 0 auto;
+        gap: 4rem;
+        text-align: left;
+    }
+
+    body {
+        background-image: url(./images/bg-desktop.svg);
+        background-size:cover;
+        background-position: 100px center;
+    }
+
+
+
+    .huddle {
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .left-content {
+        grid-column: 1/2;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .right-content {
+        grid-column: 2/3;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .social {
+        grid-column: 2/3;
+        grid-row: 3;
+        justify-self: end;
+        align-self: end;
+    }
+
+    button {
+        width: 40%;
+    }
+}
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
